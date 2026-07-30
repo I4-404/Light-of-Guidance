@@ -1,12 +1,12 @@
 {
-  "name": "Abdallah G EL",
-  "arabicName": "عبدالله",
-  "role": "مطوّر تطبيقات ومحتوى",
-  "location": "مصر – البحيرة",
-  "tagline": "أبني تطبيقات، وأكتب عن رحلة البناء.",
-  "bio": "مطوّر مهتم بصناعة تطبيقات مفيدة بسيطة الاستخدام، وأشارك هنا ما أتعلمه أثناء البناء: من الفكرة الأولى إلى النشر. المساحة هذه امتداد لتطبيقاتي، مكان أوثّق فيه الأفكار والتجارب والمشاريع الجديدة أول بأول.",
+  "name": "𝟏𝐋𝐓 - 𝐀𝐛𝐝𝐚𝐥𝐥𝐚𝐡 𝐆 𝐄𝐋",
+  "arabicName": "عبدالله جاسر المقرحي",
+  "role": "App and content developer",
+  "tagline": "I build apps",
+  "bio": "Frontend developer passionate about building feature-rich, Arabic-language web applications, specializing in turning ideas into complete, self-contained single-file HTML/CSS/JavaScript projects. My work blends technology with Islamic content and Egyptian culture — from prayer time and athkar apps to zakat calculators — alongside personal productivity tools and creative design software like a layer-based Arabic quote/poster design studio. I also build Electron-based desktop applications and Android-to-PC remote control systems using Python and ADB. With a disciplined background as a former first lieutenant in the Egyptian Army, I bring precision and creativity together in every project I take on",
+  "location": "Egypt – Al-Behira",
+  "email": "",
   "whatsapp": "+201069820552",
   "facebook": "https://www.facebook.com/OO010OO",
-  "telegram": "https://t.me/i0_404",
-  "email": ""
+  "telegram": "https://t.me/i0_404"
 }
