@@ -1,0 +1,17 @@
+{
+  "name": "لوحة التحكم — Abdallah G EL",
+  "short_name": "لوحة التحكم",
+  "description": "أداة لإدارة الموقع الشخصي: الإعدادات والمقالات والتطبيقات والأعمال",
+  "start_url": "./admin.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#05060A",
+  "theme_color": "#0D0F1A",
+  "dir": "rtl",
+  "lang": "ar",
+  "icons": [
+    { "src": "admin-icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "admin-icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

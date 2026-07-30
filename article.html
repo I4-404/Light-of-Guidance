@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="pageTitle">مقال — Abdallah G EL</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Tajawal:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#05060A; --surface:#0D0F1A; --line:#23283F;
+    --text:#F3F5FB; --muted:#8A90AC; --violet:#7C5CFF; --cyan:#22D3EE;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:radial-gradient(900px 480px at 15% -10%, rgba(124,92,255,.18) 0%, transparent 60%), var(--ink);
+    color:var(--text); font-family:'Tajawal', sans-serif; line-height:1.9; min-height:100vh;
+  }
+  .mono{ font-family:'JetBrains Mono', monospace; }
+  a{ color:inherit; }
+  header{ max-width:760px; margin:0 auto; padding:50px 24px 20px; }
+  .back{ font-size:13px; color:var(--cyan); font-family:'JetBrains Mono', monospace; text-decoration:none; }
+  header h1{ font-size:clamp(26px,5vw,40px); font-weight:900; margin:16px 0 10px; }
+  .date{ font-size:12px; color:var(--violet); font-family:'JetBrains Mono', monospace; }
+  main{ max-width:760px; margin:0 auto; padding:20px 24px 70px; }
+  main p{ margin-bottom:18px; color:#DDE1EE; font-size:17px; }
+  .empty{ color:var(--muted); padding:40px 0; text-align:center; }
+  footer{ text-align:center; padding:30px 24px; color:var(--muted); font-size:12px; font-family:'JetBrains Mono', monospace; }
+</style>
+</head>
+<body>
+<header>
+  <a class="back" href="blog.html">→ كل المقالات</a>
+  <h1 id="title">جارٍ التحميل…</h1>
+  <span class="date" id="date"></span>
+</header>
+<main id="content"></main>
+<footer>© <span id="year"></span> Abdallah G EL</footer>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  function esc(s){ return String(s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get('id');
+
+  fetch('articles.json?_=' + Date.now())
+    .then(r => r.json())
+    .then(articles => {
+      const article = articles.find(a => String(a.id) === String(id));
+      if (!article) {
+        document.getElementById('title').textContent = 'المقال غير موجود';
+        document.getElementById('content').innerHTML = '<div class="empty">تعذّر العثور على هذا المقال. قد يكون حُذف أو الرابط غير صحيح.</div>';
+        return;
+      }
+      document.getElementById('pageTitle').textContent = article.title + ' — Abdallah G EL';
+      document.getElementById('title').textContent = article.title;
+      document.getElementById('date').textContent = article.date || '';
+      const paragraphs = (article.content || '').split(/\n\s*\n/).filter(p => p.trim());
+      document.getElementById('content').innerHTML = paragraphs.map(p => `<p>${esc(p).replace(/\n/g,'<br>')}</p>`).join('')
+        || '<div class="empty">لا يوجد محتوى لهذا المقال بعد.</div>';
+    })
+    .catch(() => {
+      document.getElementById('title').textContent = 'حدث خطأ';
+      document.getElementById('content').innerHTML = '<div class="empty">تعذّر تحميل المقال.</div>';
+    });
+</script>
+</body>
+</html>

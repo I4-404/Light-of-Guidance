@@ -1,0 +1,27 @@
+{
+  "name": "لوحة نشر التطبيقات — نور الهداية",
+  "short_name": "لوحة النشر",
+  "description": "أداة لنشر وإدارة تطبيقات موقع نور الهداية مباشرة على GitHub",
+  "start_url": "./publish.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#070B14",
+  "theme_color": "#0F1626",
+  "dir": "rtl",
+  "lang": "ar",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
